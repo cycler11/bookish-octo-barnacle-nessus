@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nessus:
+    image: ramisec/nessus
+    container_name: nessus
+    ports:
+      - "8834:8834"
+    networks:
+      - nessus_network
+
+networks:
+  nessus_network:
+    driver: bridge
+
+volumes:
+  nessus_crackdb:
+  
